@@ -4,7 +4,7 @@ body {
   margin: 0;
   background-color: #f4f8ff;
   max-width: 100lvw;
-  height: 200lvh;
+  height: 300lvh;
   background-image: url('../photo/sea.jpeg'); /* 画像のパスを指定 */
   background-size: cover; /* 画面いっぱいに表示 */
   background-position: center; /* 画像の位置を中央に */
