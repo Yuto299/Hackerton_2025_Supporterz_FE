@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // トークンをローカルストレージに保存
       localStorage.setItem('jwtToken', fakeToken);
 
-      window.location.href = 'HP.html'; // ログイン成功時にindex.htmlへ
+      window.location.href = './frontend/html/HP.html'; // ログイン成功時にindex.htmlへ
     } else {
       alert('IDまたはパスワードが間違っています。');
     }
