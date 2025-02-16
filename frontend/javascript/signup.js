@@ -8,6 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('ログイン画面へ即時遷移');
 
     // すぐにログイン画面へ遷移
-    window.location.href = 'login.html'; // 必要に応じてパスを修正
+    window.location.href = '../../index.html'; // 必要に応じてパスを修正
   });
 });
