@@ -1,0 +1,115 @@
+/* ベーススタイル */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f8ff;
+  max-width: 100lvw;
+  height: 200lvh;
+  background-image: url('../photo/sea.jpeg'); /* 画像のパスを指定 */
+  background-size: cover; /* 画面いっぱいに表示 */
+  background-position: center; /* 画像の位置を中央に */
+  background-repeat: no-repeat; /* 繰り返しを無効に */
+  z-index: -1;
+}
+
+header {
+  background-color: #004080;
+  color: #f4f8ff;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'MS Mincho', serif;
+  font-size: large;
+}
+
+
+main {
+  max-width: 96lvw;
+  margin: 0 2lvw 2lvw;
+  min-height: 100lvh;
+  max-height: 130lvh;
+  padding: 20px 7lvw;
+  background-color: #f4f8ff;
+  border-radius: 8px;
+  font-family: 'MS Mincho', serif;
+  font-weight: 900;
+  opacity: 0.9; /* 透明度の調整 */
+}
+/* フォームセクション */
+section {
+  margin-bottom: 20px;
+  padding: 25px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+}
+
+section form div {
+  margin-bottom: 10px;
+}
+
+section label {
+  display: inline-block;
+  width: 80px;
+  font-weight: bold;
+}
+
+
+section input,
+section select {
+  padding: 5px;
+  width: calc(100% - 90px);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* 検索結果リスト */
+#lectureResults {
+  margin-top: 20px;
+}
+
+.lecture-item {
+  border: 1px solid #aaa;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+.lecture-item button {
+  margin-top: 5px;
+}
+
+/* ボタン */
+button {
+  background-color: #004080;
+  color: #f4f8ff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #003060;
+}
+
+/* 時間割テーブル */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  line-height: 24px; /* 24pxの行間 */
+  font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+
+}
+
+table th {
+  background-color: #f0f0f0;
+}

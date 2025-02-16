@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>アカウント作成画面</title>
+    <link rel="stylesheet" href="../css/signup.css" />
+  </head>
+  <body>
+    <div>
+      <form class="registration" id="signup-form" method="post">
+        <h1>Welcome!</h1>
+
+        <label class="pure-material-textfield-outlined">
+          <span>ユーザーID:</span>
+          <input placeholder=" " type="ID" required />
+        </label>
+
+        <label class="pure-material-textfield-outlined">
+          <span>パスワード:</span>
+          <input placeholder=" " type="Password" required />
+        </label>
+
+        <label class="pure-material-textfield-outlined">
+          <span>ユーザー名:</span>
+          <input placeholder=" " type="UserName" required />
+        </label>
+
+        <label class="pure-material-textfield-outlined">
+          <span>大学・専門:</span>
+          <input placeholder=" " type="University" required />
+        </label>
+
+        <button class="pure-material-button-contained" type="submit">登録</button>
+      </form>
+    </div>
+
+    <!-- 外部JavaScriptファイルを読み込む -->
+    <script src="../javascript/signup.js"></script>
+  </body>
+</html>
