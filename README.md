@@ -15,16 +15,16 @@ javascript main.js
 ## インストール方法
 ```
 # インストール手順
-git clone https://github.com/あなたのユーザー名/リポジトリ名.git
+git clone https://github.com/Yuto299/Hackerton_2025_Supporterz_FE.git
 cd リポジトリ名
 ```
 
 ## 今後の予定
-- 機能1の追加
-- 機能2の改善
+- レスポンシブ対応
+- ログインツールの実装
 
 ## 作者
-- 名前
+- 名前 チーム4
 - Twitter: [@あなたのアカウント](https://twitter.com/あなたのアカウント)
 
 ## ライセンス
