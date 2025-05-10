@@ -22,7 +22,6 @@ header {
   font-size: large;
 }
 
-
 main {
   max-width: 96lvw;
   margin: 0 2lvw 2lvw;
@@ -52,7 +51,6 @@ section label {
   width: 80px;
   font-weight: bold;
 }
-
 
 section input,
 section select {
@@ -107,7 +105,6 @@ table td {
   text-align: center;
   line-height: 24px; /* 24pxの行間 */
   font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
-
 }
 
 table th {

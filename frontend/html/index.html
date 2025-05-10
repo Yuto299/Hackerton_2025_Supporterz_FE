@@ -1,153 +1,146 @@
 <!DOCTYPE html>
 <html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>講義計画書時間割作成ツール</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>講義計画書時間割作成ツール</title>
-  <link rel="stylesheet" href="../css/style.css">
-</head>
+  <body>
+    <!-- ヘッダー -->
+    <header>
+      <h1>じかんわりん</h1>
+    </header>
 
-<body>
-  <!-- ヘッダー -->
-  <header>
-    <h1>じかんわりん</h1>
-  </header>
+    <main>
+      <!-- おすすめ講義を表示する時間割テーブル -->
+      <table id="scheduleTable" data-type="schedule">
+        <thead>
+          <tr>
+            <th style="width: 4%"></th>
+            <th style="width: 16%">月</th>
+            <th style="width: 16%">火</th>
+            <th style="width: 16%">水</th>
+            <th style="width: 16%">木</th>
+            <th style="width: 16%">金</th>
+            <th style="width: 16%">土</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>1限</th>
+            <td data-day="月" data-period="1"></td>
+            <td data-day="火" data-period="1"></td>
+            <td data-day="水" data-period="1"></td>
+            <td data-day="木" data-period="1"></td>
+            <td data-day="金" data-period="1"></td>
+            <td data-day="土" data-period="1"></td>
+          </tr>
+          <tr>
+            <th>2限</th>
+            <td data-day="月" data-period="2"></td>
+            <td data-day="火" data-period="2"></td>
+            <td data-day="水" data-period="2"></td>
+            <td data-day="木" data-period="2"></td>
+            <td data-day="金" data-period="2"></td>
+            <td data-day="土" data-period="2"></td>
+          </tr>
+          <tr>
+            <th>3限</th>
+            <td data-day="月" data-period="3"></td>
+            <td data-day="火" data-period="3"></td>
+            <td data-day="水" data-period="3"></td>
+            <td data-day="木" data-period="3"></td>
+            <td data-day="金" data-period="3"></td>
+            <td data-day="土" data-period="3"></td>
+          </tr>
+          <tr>
+            <th>4限</th>
+            <td data-day="月" data-period="4"></td>
+            <td data-day="火" data-period="4"></td>
+            <td data-day="水" data-period="4"></td>
+            <td data-day="木" data-period="4"></td>
+            <td data-day="金" data-period="4"></td>
+            <td data-day="土" data-period="4"></td>
+          </tr>
+          <tr>
+            <th>5限</th>
+            <td data-day="月" data-period="5"></td>
+            <td data-day="火" data-period="5"></td>
+            <td data-day="水" data-period="5"></td>
+            <td data-day="木" data-period="5"></td>
+            <td data-day="金" data-period="5"></td>
+            <td data-day="土" data-period="5"></td>
+          </tr>
+          <tr>
+            <th>6限</th>
+            <td data-day="月" data-period="6"></td>
+            <td data-day="火" data-period="6"></td>
+            <td data-day="水" data-period="6"></td>
+            <td data-day="木" data-period="6"></td>
+            <td data-day="金" data-period="6"></td>
+            <td data-day="土" data-period="6"></td>
+          </tr>
+          <tr>
+            <th>7限</th>
+            <td data-day="月" data-period="7"></td>
+            <td data-day="火" data-period="7"></td>
+            <td data-day="水" data-period="7"></td>
+            <td data-day="木" data-period="7"></td>
+            <td data-day="金" data-period="7"></td>
+            <td data-day="土" data-period="7"></td>
+          </tr>
+        </tbody>
+      </table>
 
-  <main>
+      <!-- 講義検索フォーム（lecture-form-section） -->
+      <section id="lecture-form-section" style="margin-top: 30px">
+        <form id="lectureSearchForm">
+          <div>
+            <label for="filterLectureName">講義名:</label>
+            <input type="text" id="filterLectureName" name="filterLectureName" placeholder="例: 英語読解" />
+          </div>
+          <div>
+            <label for="filterDay">曜日:</label>
+            <select id="filterDay" name="filterDay">
+              <option value="">--</option>
+              <option value="月">月</option>
+              <option value="火">火</option>
+              <option value="水">水</option>
+              <option value="木">木</option>
+              <option value="金">金</option>
+              <option value="土">土</option>
+            </select>
+          </div>
+          <div>
+            <label for="filterPeriod">時限:</label>
+            <select id="filterPeriod" name="filterPeriod">
+              <option value="">--</option>
+              <option value="１">1限</option>
+              <option value="２">2限</option>
+              <option value="３">3限</option>
+              <option value="４">4限</option>
+              <option value="５">5限</option>
+              <option value="６">6限</option>
+              <option value="７">7限</option>
+            </select>
+          </div>
+          <div>
+            <label for="filterInstructor">講師名:</label>
+            <input type="text" id="filterInstructor" name="filterInstructor" placeholder="例: 笠原" />
+          </div>
+          <div>
+            <button type="button" id="searchLecture" data-action="search-lecture">検索</button>
+          </div>
+        </form>
+        <!-- 検索結果表示エリア -->
+        <div id="lectureResults"></div>
+      </section>
+      <button id="finalRegisterButton">講義登録</button>
+    </main>
 
-    <!-- おすすめ講義を表示する時間割テーブル -->
-    <table id="scheduleTable" data-type="schedule">
-      <thead>
-        <tr>
-          <th style="width: 4%;"></th>
-          <th style="width: 16%;">月</th>
-          <th style="width: 16%;">火</th>
-          <th style="width: 16%;">水</th>
-          <th style="width: 16%;">木</th>
-          <th style="width: 16%;">金</th>
-          <th style="width: 16%;">土</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>1限</th>
-          <td data-day="月" data-period="1"></td>
-          <td data-day="火" data-period="1"></td>
-          <td data-day="水" data-period="1"></td>
-          <td data-day="木" data-period="1"></td>
-          <td data-day="金" data-period="1"></td>
-          <td data-day="土" data-period="1"></td>
-        </tr>
-        <tr>
-          <th>2限</th>
-          <td data-day="月" data-period="2"></td>
-          <td data-day="火" data-period="2"></td>
-          <td data-day="水" data-period="2"></td>
-          <td data-day="木" data-period="2"></td>
-          <td data-day="金" data-period="2"></td>
-          <td data-day="土" data-period="2"></td>
-        </tr>
-        <tr>
-          <th>3限</th>
-          <td data-day="月" data-period="3"></td>
-          <td data-day="火" data-period="3"></td>
-          <td data-day="水" data-period="3"></td>
-          <td data-day="木" data-period="3"></td>
-          <td data-day="金" data-period="3"></td>
-          <td data-day="土" data-period="3"></td>
-        </tr>
-        <tr>
-          <th>4限</th>
-          <td data-day="月" data-period="4"></td>
-          <td data-day="火" data-period="4"></td>
-          <td data-day="水" data-period="4"></td>
-          <td data-day="木" data-period="4"></td>
-          <td data-day="金" data-period="4"></td>
-          <td data-day="土" data-period="4"></td>
-        </tr>
-        <tr>
-          <th>5限</th>
-          <td data-day="月" data-period="5"></td>
-          <td data-day="火" data-period="5"></td>
-          <td data-day="水" data-period="5"></td>
-          <td data-day="木" data-period="5"></td>
-          <td data-day="金" data-period="5"></td>
-          <td data-day="土" data-period="5"></td>
-        </tr>
-        <tr>
-          <th>6限</th>
-          <td data-day="月" data-period="6"></td>
-          <td data-day="火" data-period="6"></td>
-          <td data-day="水" data-period="6"></td>
-          <td data-day="木" data-period="6"></td>
-          <td data-day="金" data-period="6"></td>
-          <td data-day="土" data-period="6"></td>
-        </tr>
-        <tr>
-          <th>7限</th>
-          <td data-day="月" data-period="7"></td>
-          <td data-day="火" data-period="7"></td>
-          <td data-day="水" data-period="7"></td>
-          <td data-day="木" data-period="7"></td>
-          <td data-day="金" data-period="7"></td>
-          <td data-day="土" data-period="7"></td>
-        </tr>
-      </tbody>
-    </table>
-
-
-    <!-- 講義検索フォーム（lecture-form-section） -->
-    <section id="lecture-form-section" style="margin-top: 30px;">
-      <form id="lectureSearchForm">
-        <div>
-          <label for="filterLectureName">講義名:</label>
-          <input type="text" id="filterLectureName" name="filterLectureName" placeholder="例: 英語読解">
-        </div>
-        <div>
-          <label for="filterDay">曜日:</label>
-          <select id="filterDay" name="filterDay">
-            <option value="">--</option>
-            <option value="月">月</option>
-            <option value="火">火</option>
-            <option value="水">水</option>
-            <option value="木">木</option>
-            <option value="金">金</option>
-            <option value="土">土</option>
-          </select>
-        </div>
-        <div>
-          <label for="filterPeriod">時限:</label>
-          <select id="filterPeriod" name="filterPeriod">
-            <option value="">--</option>
-            <option value="１">1限</option>
-            <option value="２">2限</option>
-            <option value="３">3限</option>
-            <option value="４">4限</option>
-            <option value="５">5限</option>
-            <option value="６">6限</option>
-            <option value="７">7限</option>
-          </select>
-          
-        </div>
-        <div>
-          <label for="filterInstructor">講師名:</label>
-          <input type="text" id="filterInstructor" name="filterInstructor" placeholder="例: 笠原">
-        </div>
-        <div>
-          <button type="button" id="searchLecture" data-action="search-lecture">検索</button>
-        </div>
-      </form>
-      <!-- 検索結果表示エリア -->
-      <div id="lectureResults"></div>
-    </section>
-    <button id="finalRegisterButton">講義登録</button>
-  </main>
-
-
-
-  <script src="../javascript/script.js"></script>
-  <script src="../javascript/cute.js"></script>
-</body>
-
+    <script src="../javascript/script.js"></script>
+    <script src="../javascript/cute.js"></script>
+  </body>
 </html>
