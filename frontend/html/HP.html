@@ -99,7 +99,12 @@
         <form id="lectureSearchForm">
           <div>
             <label for="filterLectureName">講義名:</label>
-            <input type="text" id="filterLectureName" name="filterLectureName" placeholder="例: 英語読解" />
+            <input
+              type="text"
+              id="filterLectureName"
+              name="filterLectureName"
+              placeholder="例: 英語読解"
+            />
           </div>
           <div>
             <label for="filterDay">曜日:</label>
@@ -128,10 +133,21 @@
           </div>
           <div>
             <label for="filterInstructor">講師名:</label>
-            <input type="text" id="filterInstructor" name="filterInstructor" placeholder="例: 笠原" />
+            <input
+              type="text"
+              id="filterInstructor"
+              name="filterInstructor"
+              placeholder="例: 笠原"
+            />
           </div>
           <div>
-            <button type="button" id="searchLecture" data-action="search-lecture">検索</button>
+            <button
+              type="button"
+              id="searchLecture"
+              data-action="search-lecture"
+            >
+              検索
+            </button>
           </div>
         </form>
         <!-- 検索結果表示エリア -->
@@ -139,25 +155,13 @@
       </section>
       <button id="finalRegisterButton">講義登録</button>
 
-      <div
-        class="form-footer"
-        style="
-          background-color: #004080;
-          color: #f4f8ff;
-          border: none;
-
-          padding: 10px 20px;
-          margin: 10px 0;
-          cursor: pointer;
-          border-radius: 8px;
-          font-size: 16px;
-        "
-      >
-        <button><a href="../../index.html">ログアウト</a></button>
+      <div class="logout-section">
+        <button class="logout-btn">
+          <a href="../../index.html">ログアウト</a>
+        </button>
       </div>
     </main>
 
     <script src="../javascript/script.js"></script>
-    <script src="../javascript/cute.js"></script>
   </body>
 </html>
